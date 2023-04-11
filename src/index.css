@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: Huge;
+  src: url("./fonts/PPAgrandir-GrandHeavy.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Wide;
+  src: url("./fonts/PPAgrandir-WideLight.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Regular;
+  src: url("./fonts/PPAgrandir-Regular.otf") format("opentype");
+}
 
 *, *::before, *::after {
   margin: 0;
@@ -22,19 +36,26 @@ html,body
     height: 100%;
     margin: 0px;
     padding: 0px;
+    overflow: scroll;
 }
 
 h1, h2 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Huge', sans-serif;
   font-weight: 600;
 }
 
 h3, h4, h5, h6 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Wide', sans-serif;
   font-weight: 300;
 }
 
 p {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Regular', serif;
   font-weight: 400;
+}
+
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
 }

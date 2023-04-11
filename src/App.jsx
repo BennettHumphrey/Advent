@@ -1,12 +1,15 @@
-import './App.css'
-import Test from './components/test'
+import { useState } from 'react';
+import Cards from './components/Cards'
+import Header from './components/Header'
 
 function App() {
 
+  const [dateAdjust, setDateAdjust] = useState(0);
+
   return (
-    <div >
-      <Test  />
-      <p className='text-red-500' >testRed</p>
+    <div className='bg-black text-white' >
+      <Header setDateAdjust={setDateAdjust} dateAdjust={dateAdjust} />
+      <Cards dateAdjust={dateAdjust} />
     </div>
   )
 }
