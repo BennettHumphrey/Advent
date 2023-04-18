@@ -18,10 +18,16 @@ const Card = ({ i, x, setOpen, setCard, date, glow }) => {
       return "bg-[#000000FA] border border-[#AAAAAA]"
   }
 
+  //To make it just open the current date,
+  //change x.id <= date to x.id === date on line 29
+  //and i+1 <= date to i+1 === date on line 44
+
   return (
       <div className={`h-full w-full flex duration-500 ease-in-out 
       ${x.id === 24 ? "justify-center items-center" : width < 640 ? x.mobile.pos : x.desktop.pos}
-      ${x.id === date - 1 && "hover:cursor-pointer"}
+
+      ${x.id <= date - 1 && "hover:cursor-pointer"}
+
       ${setBG(x.id, date, glow, width)}`} 
 
       //Because for some reason this doesn't work in tailwind...
@@ -35,7 +41,7 @@ const Card = ({ i, x, setOpen, setCard, date, glow }) => {
 
       onPointerUp={() => {
         setCard(i);
-        {i+1 === date && setOpen(true)}}}>
+        {i+1 <= date && setOpen(true)}}}>
 
             <p className={`relative inline text-4xl font-extrabold p-3`} >{x.id === 24 ? "It's Christmas!" : i+1}</p>
 

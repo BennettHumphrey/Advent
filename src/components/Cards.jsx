@@ -13,8 +13,10 @@ const Cards = ({ dateAdjust, date, setDate, glow }) => {
 
   const currentDate = new Date();
 
+  
+
   async function getPosts() {
-    const posts = await SanityClient.fetch(`*[id<${date}] | order(id asc)`,);
+    const posts = await SanityClient.fetch(`*[id<${date}] | order(id asc)`);
     setAvailableCards(posts)
   };
   
@@ -25,8 +27,6 @@ const Cards = ({ dateAdjust, date, setDate, glow }) => {
   useEffect(() => {
     getPosts();
   }, [date]);
-
-//12x5
 
   return (
     <div className='flex justify-center' >
@@ -41,7 +41,5 @@ const Cards = ({ dateAdjust, date, setDate, glow }) => {
     </div>
   )
 }
-
-// 2x29
 
 export default Cards
