@@ -98,7 +98,7 @@ export const cardsLayout = [
         id: 6,
         mobile: {
             rows:[9, 10],
-            cols:[2, 3],
+            cols:[1, 2],
             pos: numPos("br")
         },
         desktop: {
