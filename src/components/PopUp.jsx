@@ -3,12 +3,6 @@ import { urlFor } from '../client';
 
 const PopUp = ({data, setOpen}) => {
 
-    // const imageSource = (x) => {
-    //     return 00 += x
-    // }
-
-    // console.log(`data ${JSON.stringify(data)}`)
-
     if(!data) data = {
         id: null,
         name: "Data not found",
@@ -22,7 +16,7 @@ const PopUp = ({data, setOpen}) => {
         <div className='relative mx-auto flex justify-center w-[90vw] max-w-[400px] py-3 
                         sm:max-w-[85vw] sm:h-full' >
             <div className='w-full flex flex-col sm:flex-row sm:items-center' >
-                <div className='absolute bg-red-500 rounded-full text-center 
+                <div className='absolute rounded-full text-center 
                 h-10 w-10 flex items-center justify-center
                 right-1 top-1 hover:cursor-pointer'
                     onPointerUp={() => {
