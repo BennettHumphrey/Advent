@@ -8,7 +8,7 @@ const Header = ({ setDateAdjust, dateAdjust, date }) => {
   return (
     <div className='pt-3 relative pb-3 bg-transparent'>
       <div className='absolute top-[11px] flex flex-col ml-1 z-10' >
-        <p className='text-center'
+        <p className='text-center hover:cursor-pointer'
         onPointerUp={(x) => {
           if (currentDate + dateAdjust >= 25) return;
           setDateAdjust(dateAdjust + 1)
@@ -18,7 +18,7 @@ const Header = ({ setDateAdjust, dateAdjust, date }) => {
         // }} 
         >+</p>
         <p className='text-center text-xs' >{date}</p>
-        <p className='text-center'
+        <p className='text-center hover:cursor-pointer'
         onPointerUp={(x) => {
           if (currentDate + dateAdjust <= 1) return;
           setDateAdjust(dateAdjust - 1)
