@@ -1,29 +1,14 @@
 import React from 'react'
 import { useWindowWidth } from './useWindowWidth';
+import { setBG } from '../utils/setBG';
 
 const Card = ({ i, x, setOpen, setCard, date, glow }) => {
 
   const width = useWindowWidth();
 
-  const setBG = (id, date, glow, width) => {
-    if (id === date - 1 && glow === true) {
-      return "bg-blue-400"
-    };
-    if (id < date) {
-      return "bg-[#EA5D8D]"
-    };
-    if(width < 640) {
-      return "bg-[#313131]"
-    }
-      return "bg-[#000000FA] border border-[#AAAAAA]"
-  }
-
-  //To make it just open the current date,
-  //change x.id <= date to x.id === date on line 29
-  //and i+1 <= date to i+1 === date on line 44
-
   return (
       <div className={`h-full w-full flex duration-500 ease-in-out 
+    
       ${x.id === 24 ? "justify-center items-center" : width < 640 ? x.mobile.pos : x.desktop.pos}
 
       ${x.id <= date - 1 && "hover:cursor-pointer"}

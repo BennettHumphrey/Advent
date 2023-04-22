@@ -1,0 +1,1 @@
+export const randomNumber = (x) => Math.floor(Math.random()*x)

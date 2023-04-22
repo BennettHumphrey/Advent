@@ -13,16 +13,21 @@ const Cards = ({ dateAdjust, date, setDate, glow }) => {
 
   const currentDate = new Date();
 
-  
+  //To fetch from Sanity
 
   async function getPosts() {
-    const posts = await SanityClient.fetch(`*[id<${date}] | order(id asc)`);
+    const posts = await SanityClient.fetch(`*[id<${date+1}] | order(id asc)`);
     setAvailableCards(posts)
+    console.log(JSON.stringify(availableCards[1]))
   };
   
+  //Used to adjust the date
+
   useEffect(() => {
     setDate(currentDate.getDate() + dateAdjust)
   }, [dateAdjust]);
+
+  //Pulls all available cards from Sanity on load, updates on changing the date
 
   useEffect(() => {
     getPosts();
